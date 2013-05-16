@@ -1,6 +1,7 @@
 %define major 0
 %define libname %mklibname natspec %{major}
 %define develname %mklibname natspec -d
+%bcond_with	crosscompile
 
 Name:		libnatspec
 Version:	0.2.6
@@ -61,6 +62,10 @@ sh autoheader
 sh libtoolize --copy --force
 sh automake --add-missing --include-deps --copy --force-missing
 sh autoconf
+%if %{with crosscompile}
+export ac_cv_func_malloc_0_nonnull=yes
+export ac_cv_func_realloc_0_nonnull=yes
+%endif
 %configure2_5x
 %make
 
