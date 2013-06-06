@@ -1,18 +1,18 @@
-%define major 0
-%define libname %mklibname natspec %{major}
-%define develname %mklibname natspec -d
+%define major	0
+%define libname	%mklibname natspec %{major}
+%define devname	%mklibname natspec -d
 %bcond_with	crosscompile
 
+Summary:	Library for national and language-specific issues
 Name:		libnatspec
 Version:	0.2.6
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://sourceforge.net/projects/natspec/
-Summary:	Library for national and language-specific issues
 Source0:	%{name}-%{version}.tar.bz2
 BuildRequires:	doxygen
-BuildRequires:	popt-devel
+BuildRequires:	pkgconfig(popt)
 
 %description
 Library for national and language-specific issues.
@@ -33,13 +33,13 @@ mount, submount, mkisofs, multimedia players.
 This library try to help resolve charset hell (encoding problem)
 in a various programs depends on locale and messages.
 
-%package -n %{develname}
+%package -n %{devname}
 Summary:	Development package of library for national and language-specific issues
 Group:		Development/Other
 Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 
-%description -n %{develname}
+%description -n %{devname}
 The %{name}-devel package contains the necessary include files
 for developing applications with %{name}
 This library try to help resolve charset hell (encoding problem)
@@ -87,9 +87,9 @@ mv %{buildroot}%{_libdir}/%{name}.* %{buildroot}/%{_lib}
 %{_mandir}/man1/*.1*
 
 %files -n %{libname}
-/%{_lib}/*.so.*
+/%{_lib}/libnetspec.so.%{major}*
 
-%files -n %{develname}
+%files -n %{devname}
 %doc docs/html
 %{_includedir}/*.h
 /%{_lib}/*.so
@@ -98,14 +98,4 @@ mv %{buildroot}%{_libdir}/%{name}.* %{buildroot}/%{_lib}
 
 %files devel-examples
 %doc examples profile
-
-%changelog
-* Thu Jul 07 2011 Александр Казанцев <kazancas@mandriva.org> 0.2.4-2mdv2011.0
-+ Revision: 689047
-+ rebuild (emptylog)
-
-* Wed Jul 06 2011 Александр Казанцев <kazancas@mandriva.org> 0.2.4-1
-+ Revision: 688950
-- imported package libnatspec
-- Created package structure for libnatspec.
 
