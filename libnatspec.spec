@@ -1,7 +1,7 @@
-%define major	0
-%define libname	%mklibname natspec %{major}
-%define devname	%mklibname natspec -d
-%bcond_with	crosscompile
+%define major 0
+%define libname %mklibname natspec %{major}
+%define devname %mklibname natspec -d
+%bcond_with crosscompile
 
 Summary:	Library for national and language-specific issues
 Name:		libnatspec
@@ -87,7 +87,7 @@ mv %{buildroot}%{_libdir}/%{name}.* %{buildroot}/%{_lib}
 %{_mandir}/man1/*.1*
 
 %files -n %{libname}
-/%{_lib}/libnetspec.so.%{major}*
+/%{_lib}/libnatspec.so.%{major}*
 
 %files -n %{devname}
 %doc docs/html
