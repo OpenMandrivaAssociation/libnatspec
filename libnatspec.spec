@@ -6,7 +6,7 @@
 Summary:	Library for national and language-specific issues
 Name:		libnatspec
 Version:	0.2.6
-Release:	8
+Release:	9
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://sourceforge.net/projects/natspec/
