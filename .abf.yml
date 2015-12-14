@@ -1,2 +1,4 @@
+removed_sources:
+  libnatspec-0.2.6.tar.bz2: 322adbd2d8e869e2714a6bc729316f14b1bbe70d
 sources:
-  "libnatspec-0.2.6.tar.bz2": 322adbd2d8e869e2714a6bc729316f14b1bbe70d
+  libnatspec-0.3.0.tar.bz2: d7508827effc902932c2e1b0c801992764388b6c
