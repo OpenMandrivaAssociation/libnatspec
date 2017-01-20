@@ -6,7 +6,7 @@
 Summary:	Library for national and language-specific issues
 Name:		libnatspec
 Version:	0.3.0
-Release:	3
+Release:	4
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://sourceforge.net/projects/natspec/
@@ -66,7 +66,7 @@ sh autoconf
 export ac_cv_func_malloc_0_nonnull=yes
 export ac_cv_func_realloc_0_nonnull=yes
 %endif
-%configure2_5x
+%configure
 %make
 
 pushd docs
@@ -82,7 +82,7 @@ mkdir -p %{buildroot}/%{_lib}
 mv %{buildroot}%{_libdir}/%{name}.* %{buildroot}/%{_lib}
 
 %files
-%doc AUTHORS README ChangeLog NEWS TODO README-ru.html
+%doc AUTHORS README NEWS TODO README-ru.html
 %{_bindir}/*
 %{_mandir}/man1/*.1*
 
