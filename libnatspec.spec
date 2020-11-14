@@ -57,11 +57,11 @@ for developing applications with %{name}
 %setup -q
 
 %build
-sh aclocal
-sh autoheader
-sh libtoolize --copy --force
-sh automake --add-missing --include-deps --copy --force-missing
-sh autoconf
+aclocal
+autoheader
+libtoolize --copy --force
+automake --add-missing --include-deps --copy --force-missing
+autoconf
 %if %{with crosscompile}
 export ac_cv_func_malloc_0_nonnull=yes
 export ac_cv_func_realloc_0_nonnull=yes
