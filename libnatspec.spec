@@ -9,7 +9,7 @@ Version:	0.3.0
 Release:	6
 License:	LGPLv2
 Group:		System/Libraries
-Url:		http://sourceforge.net/projects/natspec/
+Url:		https://sourceforge.net/projects/natspec/
 Source0:	%{name}-%{version}.tar.bz2
 BuildRequires:	doxygen
 BuildRequires:	pkgconfig(popt)
